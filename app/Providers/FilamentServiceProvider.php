@@ -58,8 +58,5 @@ class FilamentServiceProvider extends PanelProvider
         parent::register();
     }
 
-    public function boot()
-    {
-
-    }
+    public function boot() {}
 }
