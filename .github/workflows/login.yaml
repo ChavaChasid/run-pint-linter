@@ -1,0 +1,16 @@
+name: Deploy automation runbooks
+on:
+  push:
+permissions:
+  contents: read
+  id-token: write
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS_MG }}
+          enable-AzPSSession: true
